@@ -12,6 +12,7 @@ O'zbek internet segmentida online hujjatlar va shaxsiy blogni rivojlantirishga q
   * [Markdown fayllar](#markdown-fayllar)
 - [Sozlamalar](#sozlamalar)
 - [Kodlarni tahrirlash](#kodlarni-tahrirlash)
+- [Telegram bot](#telegram-bot)
 - [Telegram instant view](#telegram-instant-view)
 - [Litsenziya](#litsenziya)
 
@@ -251,6 +252,19 @@ class Custom {
 4. `views` stsenariy mavzulari (front) jildi
 5. `res` front resuslar uchun jild (js, css, rasmlar va h.k)
 6. `third_party` qo'shimcha kutubxonalarni o'rnatish
+
+## Telegram bot
+Tizim foydalanuvchilariga yanada qulaylik ulashish maqsadida telegram bot bilan integratsiya qilish ham mumkin.
+
+1. @BotFather orqali yangi bot yaratgach [config/telegram.php](src/config/telegram.php) konfiguratsiya faylidan `telegram_bot_token` va `telegram_bot_username` qismlari uchun kerakli ma'lumotlarni to'ldiring.
+
+2. @BotFatherdan telegram bot sozlamalarida `inline` va `guruhga qo'shish` funksiyalarini yoqing.
+
+3. Quyidagi urlda `TOKEN` ni o'zingizga mos token bilan almashtirib, telegram bot va tizimni ulang.
+
+```http
+https://api.telegram.org/botTOKEN/setWebhook?url=https://domen.uz/thook
+```
 
 ## Telegram instant view
 Agarda siz tizimni telegram instant view uchun ham sozlamoqchi bo'lsangiz biz siz uchun tayyor sozlamalarni taklif etamiz. Ushbu sozlamalar orqali sahifalarni osongina IV uchun moslashingiz mumkin.
