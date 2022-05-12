@@ -256,6 +256,8 @@ class Custom {
 ## Telegram bot
 Tizim foydalanuvchilariga yanada qulaylik ulashish maqsadida telegram bot bilan integratsiya qilish ham mumkin.
 
+Demo: http://t.me/maidianrobot
+
 1. @BotFather orqali yangi bot yaratgach [config/telegram.php](src/config/telegram.php) konfiguratsiya faylidan `telegram_bot_token` va `telegram_bot_username` qismlari uchun kerakli ma'lumotlarni to'ldiring.
 
 2. @BotFatherdan telegram bot sozlamalarida `inline` va `guruhga qo'shish` funksiyalarini yoqing.
