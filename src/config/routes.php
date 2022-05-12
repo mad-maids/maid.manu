@@ -1,6 +1,8 @@
 <?php
 
 $router['/sitemap.xml'] = array('Sitemap', 'index');
+$router['/thook[/]?'] = array('Telegram', 'index');
+
 $router['/api[/]?'] = array('Api', 'index');
 $router['/api/(\w+)[/]?'] = array('Api', 'method');
 $router['/search[/]?'] = array('Search', 'index');
