@@ -12,6 +12,7 @@ O'zbek internet segmentida online hujjatlar va shaxsiy blogni rivojlantirishga q
   * [Markdown fayllar](#markdown-fayllar)
 - [Sozlamalar](#sozlamalar)
 - [Kodlarni tahrirlash](#kodlarni-tahrirlash)
+- [Telegram instant view](#telegram-instant-view)
 - [Litsenziya](#litsenziya)
 
 ## Xususiyatlar
@@ -189,7 +190,7 @@ ___
 *Misol:*
 
 ```
-http://domain.uz/hello	// string(11) "Salom dunyo"
+http://domain.uz/hello  // string(11) "Salom dunyo"
 http://domain.uz/hello/eshmat // string(12) "Salom eshmat"
 ```
 
@@ -200,13 +201,13 @@ namespace Controller;
 use Model;
 
 class Hello {
-	public function say() {
-		echo "Salom dunyo";
-	}
+  public function say() {
+    echo "Salom dunyo";
+  }
 
-	public function sayname( $name ) {
-		echo "Salom: {$name}";
-	}
+  public function sayname( $name ) {
+    echo "Salom: {$name}";
+  }
 }
 ```
 ```php
@@ -219,7 +220,7 @@ $router['/hello/(.+)'] = array('Hello', 'sayname');
 2. `helpers` jildi ostida joylashgan fayllar qo'shimcha yordamchi funksiyalarni kiritish imkonini beradi.
 3. `models` jildi ostida joylashgan fayllar qo'shimcha yordamchi obyektlarni kiritish imkonini beradi.
 ```
-http://domain.uz/hello	// string(11) "Salom dunyo"
+http://domain.uz/hello  // string(11) "Salom dunyo"
 ```
 
 ```php
@@ -229,9 +230,9 @@ namespace Controller;
 use Model;
 
 class Hello {
-	public function say() {
-		Model\Custom::hello();
-	}
+  public function say() {
+    Model\Custom::hello();
+  }
 }
 ```
 ```php
@@ -239,10 +240,10 @@ class Hello {
 //Namuna Modeli
 namespace Model;
 class Custom {
-	
-	public function hello() {
-		echo "Salom dunyo";
-	}
+  
+  public function hello() {
+    echo "Salom dunyo";
+  }
 
 }
 ```
@@ -250,6 +251,24 @@ class Custom {
 4. `views` stsenariy mavzulari (front) jildi
 5. `res` front resuslar uchun jild (js, css, rasmlar va h.k)
 6. `third_party` qo'shimcha kutubxonalarni o'rnatish
+
+## Telegram instant view
+Agarda siz tizimni telegram instant view uchun ham sozlamoqchi bo'lsangiz biz siz uchun tayyor sozlamalarni taklif etamiz. Ushbu sozlamalar orqali sahifalarni osongina IV uchun moslashingiz mumkin.
+
+```
+?exists: //div[@class="w"]
+title:  $body//h1
+author: "Yetim dasturchi"
+author_url: "https://t.me/iplosvoy"
+cover: $@
+
+body: //div[has-class("w")]
+@remove:$body//a[contains(@title,"orqaga")]
+@remove:$body//h1[1]
+@remove:$body//blockquote[1]
+@remove:$body//ul[@class="table-of-contents"]
+@remove:$body//a[@class="heading-permalink"]
+```
 
 ## Litsenziya
 `mad-maids/maid.manu` AGPL-3.0 litsenziyasi ostida litsenziyalangan. Batafsil ma'lumot uchun [`LICENSE`](LICENSE) fayliga qarang.
