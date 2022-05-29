@@ -2,6 +2,9 @@ title: "kod parchalari"
 description: "Yetim dasturchi tomonidan yozilgan kod parchalari."
 keywords: "parcha, snippets, code, kod, soft, program, til, tili, manuchehr, usmonov, devcon"
 entries:
+  - title: "PHP cli argumentlarini REQUEST_URIga o'tkazish"
+    after: "( php )"
+    url: php-agr-request-uri.htm
   - title: "Javascriptda minimal router"
     after: "( html, js )"
     url: javascript-router.htm

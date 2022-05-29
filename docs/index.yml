@@ -2,8 +2,8 @@ title: "Yetim dasturchi kundaligi"
 description: "Yetim dasturchi kundaligi."
 keywords: "dastur, dasturlash, dasturchi, soft, program, til, tili, manuchehr, usmonov, devcon"
 entries:
-    - title: ma'lumotnoma
-      url: about.htm
+    #- title: ma'lumotnoma
+    #  url: about.htm
     - title: izlash
       url: search
     - title: qo'llanmalar
@@ -31,6 +31,9 @@ entries:
           show_more: true
           show_more_text: ko'proq...
           show_more_url: blog
+    - title: "manu to'plamlari"
+      url: https://collections.manu.uno/
+      target: _blank
     - title: loyihani qo'llab quvvatlash
       url: donate.htm
     - title: aloqa
