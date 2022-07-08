@@ -1,0 +1,13 @@
+pagination: true
+title: "Rey BREDBERI - Farengeyt boʻyicha 451 daraja"
+description: "Farengeyt boʻyicha 451 daraja romanida oʻquvchi XXI asrning oddiy oʻt oʻchiruvchisi bilan tanishadi. Romanning bosh qahramoni..."
+keywords: adabiyot, Rey BREDBERI, BREDBERI, Farengeyt, olov, kitob, elektron
+entries:
+  - title: "Kirish"
+    url: kirish.htm
+  - title: "Birinchi qism. BOSHPANA VA SAMANDAR"
+    url: birinchi-qism-boshpana-va-samandar.htm
+  - title: "Ikkinchi qism. ELAK VA QUM"
+    url: ikkinchi-qism-elak-va-qum.htm
+  - title: "Uchinchi qism. OLOV LOVULLAB YONADI"
+    url: uchinchi-qism-olov-lovullab-yonadi.htm

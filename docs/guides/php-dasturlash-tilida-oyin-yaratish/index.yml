@@ -1,0 +1,12 @@
+title: "Php dasturlash tilida o'yin yaratish"
+description: "Php dasturlash tilining keng imkoniyatlaridan foydalangan holda real vaqt uchun mos keladigan o'yin yaratish."
+keywords: "php, o'yin, game, cli, stdin, qism, qismlar, yaratish"
+entries:
+  - title: "1-qism"
+    url: "1-qism.htm"
+  - title: "2-qism (Tic tac toe o'yini)"
+    url: "2-qism.htm"
+  - title: "3-qism (Snake Xenzia o'yini)"
+    url: "3-qism.htm"
+  - title: "4-qism (Koinot urushi o'yini)"
+    url: "4-qism.htm"

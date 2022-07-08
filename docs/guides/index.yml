@@ -3,5 +3,7 @@ title: "Qo'llanmalar"
 description: "Yetim dasturchi tomonidan yozilgan qo'llanmalar."
 keywords: "dastur, dasturlash, dasturchi, soft, program, til, tili, manuchehr, usmonov, devcon"
 entries:
+  - title: "Php dasturlash tilida o'yin yaratish"
+    url: php-dasturlash-tilida-oyin-yaratish
   - title: Kompyuter asoslari
     url: kompyuter-asoslari

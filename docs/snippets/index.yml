@@ -2,6 +2,10 @@ title: "kod parchalari"
 description: "Yetim dasturchi tomonidan yozilgan kod parchalari."
 keywords: "parcha, snippets, code, kod, soft, program, til, tili, manuchehr, usmonov, devcon"
 entries:
+  - title: "Telegram chat botni linux shell orqali boshqarish"
+    url: telegram-chat-botni-linux-shell-orqali-boshqarish.htm
+  - title: "PHP yordamida rasm chizish"
+    url: php-yordamida-rasm-chizish.htm
   - title: "PHP cli argumentlarini REQUEST_URIga o'tkazish"
     after: "( php )"
     url: php-agr-request-uri.htm

@@ -6,6 +6,11 @@ entries:
     #  url: about.htm
     - title: izlash
       url: search
+    - title: telegram kanal
+      url: "https://t.me/yetimdasturchi"
+    - title: kutubxona
+      url: library
+      target: _blank
     - title: qo'llanmalar
       entries:
         - post_list: guides
