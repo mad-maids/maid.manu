@@ -197,3 +197,42 @@ function load_view( $path, $vars=[] ) {
 	ob_end_clean();
 	echo $buffer;
 }
+if ( ! function_exists( '_sanitize_globals' ) ) {
+	function _sanitize_globals() {
+		if ( is_array( $_GET ) ) {
+			foreach ( $_GET as $key => $val ) {
+				$_GET[ xss_clean( $key ) ] = xss_clean( $val );
+			}
+		}
+
+		if ( is_array( $_POST ) ) {
+			foreach ( $_POST as $key => $val ) {
+				$_POST[ xss_clean( $key ) ] = xss_clean( $val );
+			}
+		}
+
+		if ( is_array( $_SERVER ) ) {
+			foreach ( $_SERVER as $key => $val ) {
+				$_SERVER[ xss_clean( $key ) ] = xss_clean( $val );
+			}
+		}
+
+		if ( is_array( $_COOKIE ) ) {
+			unset(
+				$_COOKIE[ '$Version' ],
+				$_COOKIE[ '$Path' ],
+				$_COOKIE[ '$Domain' ]
+			);
+
+			foreach ( $_COOKIE as $key => $val) {
+				if ( ( $cookie_key = xss_clean( $key ) ) !== FALSE ) {
+					$_COOKIE[ $cookie_key ] = xss_clean( $val );
+				}else {
+					unset( $_COOKIE[ $key ] );
+				}
+			}
+		}
+
+		$_SERVER['PHP_SELF'] = strip_tags( $_SERVER['PHP_SELF'] );
+	}
+}

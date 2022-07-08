@@ -36,7 +36,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('res/apple-touch-icon.png');?>">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('res/favicon-32x32.png');?>">
   <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('res/favicon-16x16.png');?>">
-  <link rel="manifest" href="<?php echo base_url('res/site.webmanifest');?>">
+  <link crossorigin="use-credentials" rel="manifest" href="<?php echo base_url('res/site.json');?>">
   <link rel="mask-icon" href="<?php echo base_url('res/safari-pinned-tab.svg');?>" color="#ff9933">
   <link rel="shortcut icon" href="<?php echo base_url('res/favicon.ico');?>">
   <meta name="msapplication-TileColor" content="#000000">

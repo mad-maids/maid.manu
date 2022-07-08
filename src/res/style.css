@@ -1,91 +1,119 @@
-#toast_container{
-  width: 100%;
-  position: fixed;
-  bottom: 12%;
-  left: 0;
-        pointer-events:none;
+::-webkit-scrollbar {
+  width: 5px
 }
 
-#toast{
+::-webkit-scrollbar-track {
+  background: #000
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f93;
+  border-radius: 3px
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #454a47
+}
+
+#toast_container {
+  width: 100%;
+  position: sticky;
+  bottom: 12%;
+  left: 0;
+  pointer-events: none
+}
+
+#toast {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #0066CC;
+  background-color: #06c;
   color: #fff;
   font-size: 13px;
   padding: 5px;
   border-radius: 2px;
   -webkit-border-radius: 2px;
-  opacity: 0.95;
+  opacity: .95;
   text-align: center;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto, sans-serif
 }
 
-#toast em{
-  color: rgb(81, 180, 210);
-  font-weight: bold;
-  font-style: normal;
+#toast em {
+  color: #51b4d2;
+  font-weight: 700;
+  font-style: normal
 }
 
-.toast_top{
+#toast a{
+  color: #fff;
+}
+
+#toast_container.event{
+  pointer-events:auto!important;
+}
+
+.toast_top {
   top: 12%;
-  bottom: auto !important;
+  bottom: auto !important
 }
 
-
-.toast_fadein{
+.toast_fadein {
   animation: toast_fadein 1s ease;
-  -webkit-animation: toast_fadein 1s ease;
+  -webkit-animation: toast_fadein 1s ease
 }
 
-.toast_fadeout{
+.toast_fadeout {
   animation: toast_fadeout 1s ease;
   -webkit-animation: toast_fadeout 1s ease;
   animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards
 }
 
-@keyframes toast_fadein{
+@keyframes toast_fadein {
   from {
     opacity: 0;
-    -webkit-opacity: 0;
+    -webkit-opacity: 0
   }
-  to {
-    opacity: 0.95;
-    -webkit-opacity: 0.95;
-  }
-}
 
-@-webkit-keyframes toast_fadein{
-  from {
-    opacity: 0;
-    -webkit-opacity: 0;
-  }
   to {
-    opacity: 0.95;
-    -webkit-opacity: 0.95;
+    opacity: .95;
+    -webkit-opacity: 0.95
   }
 }
 
-@keyframes toast_fadeout{
+@-webkit-keyframes toast_fadein {
   from {
-    opacity: 0.95;
-    -webkit-opacity: 0.95;
-  }
-  to {
     opacity: 0;
-    -webkit-opacity: 0;
+    -webkit-opacity: 0
+  }
+
+  to {
+    opacity: .95;
+    -webkit-opacity: 0.95
   }
 }
 
-@-webkit-keyframes toast_fadeout{
+@keyframes toast_fadeout {
   from {
-    opacity: 0.95;
-    -webkit-opacity: 0.95;
+    opacity: .95;
+    -webkit-opacity: 0.95
   }
+
   to {
     opacity: 0;
-    -webkit-opacity: 0;
+    -webkit-opacity: 0
+  }
+}
+
+@-webkit-keyframes toast_fadeout {
+  from {
+    opacity: .95;
+    -webkit-opacity: 0.95
+  }
+
+  to {
+    opacity: 0;
+    -webkit-opacity: 0
   }
 }
 
@@ -195,33 +223,19 @@ body {
   filter: invert(1)
 }
 
-body img, code {
+body img,
+code {
   filter: invert(1)
 }
 
 body img.ioda {
   filter: invert(0)
 }
-/*
-@media (prefers-color-scheme: dark) {
-  body[data-mode="auto"] {
-    filter: invert(1)
-  }
 
-  body[data-mode="auto"] img {
-    filter: invert(1)
-  }
-
-  body[data-mode="auto"] img.ioda {
-    filter: invert(0)
-  }
-}
-*/
-
-html,
-body {
-  background: white;
-  font-size: 1em;
+body,
+html {
+  background: #fff;
+  font-size: 1em
 }
 
 html {
@@ -229,7 +243,7 @@ html {
 }
 
 body {
-  color: black;
+  color: #000;
   font-family: monospace;
   font-size: 16px;
   line-height: 1.4;
@@ -259,11 +273,11 @@ p {
 }
 
 li {
-  margin: 0.4rem 0
+  margin: .4rem 0
 }
 
-*:target {
-  background: yellow
+:target {
+  background: #ff0
 }
 
 .w {
@@ -289,21 +303,21 @@ table {
   width: 100%
 }
 
-.table-responsive{
-  overflow-x:auto;
+.table-responsive {
+  overflow-x: auto;
 }
 
 table,
-th,
-td {
-  border: thin solid black;
+td,
+th {
+  border: thin solid #000;
   border-collapse: collapse;
-  padding: 0.4rem
+  padding: .4rem
 }
 
 code {
-  color: white;
-  background: black
+  color: #fff;
+  background: #000
 }
 
 div.highlighter-rouge code {
@@ -315,7 +329,7 @@ div.highlighter-rouge code {
 
 blockquote {
   font-style: italic;
-  border: thin solid black;
+  border: thin solid #000;
   padding: 1rem
 }
 
@@ -328,20 +342,25 @@ img {
   display: block;
   margin: 0 auto
 }
-a{
-  color: #0066CC;
+
+a {
+  color: #06c
 }
+
 ul ul ul {
-  list-style-type: circle;
+  list-style-type: circle
 }
-mark{
-  background-color: #782672a6;
+
+mark {
+  background-color: #782672a6
 }
-.smileys{
-  display: inline;
+
+.smileys {
+  display: inline
 }
-.heading-permalink{
-  font-size: 11px;
+
+.heading-permalink {
+  font-size: 11px
 }
 
 .pagination {
@@ -349,17 +368,18 @@ mark{
   justify-content: center;
   align-items: center;
   list-style: none;
-  font-size: 18px;
+  font-size: 18px
 }
 
-.pagination li{
-  margin-right: 5px;
+.pagination li {
+  margin-right: 5px
 }
 
-.pagination li.active a{
-  color: black;
+.pagination li.active a {
+  color: #000
 }
-input[type="search"]{
+
+input[type="search"] {
   width: 100%;
   padding: 10px;
   font-size: 1rem;

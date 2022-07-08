@@ -11,7 +11,7 @@ class Search
 		$data['html'] = $res['html'];
 		$data['headline'] = "Izlash";
 		$data['backButton'] =  '/';
-		$data['term'] = $_GET['term'];
+		$data['term'] = xss_clean($_GET['term']);
 		if ( isset( $_GET['term'] ) ) {
 			if (strlen($_GET['term']) > 2) {
 				$items = search($_GET['term']);

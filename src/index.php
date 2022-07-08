@@ -3,7 +3,7 @@ header("Content-Type: text/html; charset=UTF-8");
 
 define( 'ENVIRONMENT' , isset( $_SERVER['APP_ENV'] ) ? $_SERVER['APP_ENV'] : 'development' );
 
-const APP_VERSION = '0.1.9';
+const APP_VERSION = '0.2.1';
 
 switch ( ENVIRONMENT )
 {
@@ -50,6 +50,7 @@ foreach ( array_merge( glob( CONFIGPATH."*.php" ), glob( HLPPATH."*.php" ), glob
 {
 	require_once $filename;
 }
+_sanitize_globals();
 set_error_handler( function ( $errno, $errstr, $errfile, $errline ) {
 	$ignore = ( $errno & error_reporting() ) == 0;
     if( !$ignore ){

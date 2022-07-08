@@ -7,6 +7,7 @@
 		this.duration = 3000;
 		this.content = '';
 		this.position = 'bottom';
+		this.pointer = false;
 
 		if (!options || typeof options != 'object') {
 			return false;
@@ -17,6 +18,10 @@
 		}
 		if (options.content) {
 			this.content = options.content;
+		}
+
+		if (options.pointer) {
+			this.pointer = options.pointer;
 		}
 
 		if (options.position) {
@@ -47,6 +52,10 @@
 		var classes = 'toast_fadein';
 		if (this.position === 'top') {
 			classes = 'toast_fadein toast_top';
+		}
+
+		if (this.pointer) {
+			classes = classes + ' event';
 		}
 
 		var toast_container = document.createElement('div');
@@ -106,7 +115,13 @@ var fetchBody = function( url ) {
 		document.title = title;
 		document.body.innerHTML = body;
 		history.pushState({page:url}, null, url);
-		window.scrollTo({ top: 0, behavior: 'smooth' });
+		if (getURLP('position') != null){
+			position = getURLP('position');
+		}else{
+			position = 0;
+		}
+		console.log(position);
+		window.scrollTo({ top: position, behavior: 'smooth' });
 		running();
 	}).catch(function (err) {
 		new Toast({
@@ -115,11 +130,48 @@ var fetchBody = function( url ) {
 	});
 }
 
+var getURLP = function( name ) {
+	var _locSearch = location.search;
+    var _splitted = (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(_locSearch)||[,""]);
+    var searchString = _splitted[1].replace(/\+/g, '%20');
+    try
+    	{
+        	searchString = decodeURIComponent(searchString);
+        }
+    catch(e)
+    	{
+        	searchString = unescape(searchString);
+        }
+    return searchString || null;
+}  
+
 window.addEventListener('popstate', (event) => {
 	fetchBody( location.href );
 });
 
+window.addEventListener('scroll', function() {
+	var match = document.location.pathname.match(/\.([0-9a-z]+)(?:[\?#]|$)/i);
+	if (match != null && ( match[1] == 'html' || match[1] == 'htm' ) ) {
+		var position = document.querySelector('html').scrollTop;
+		savedPosition = {};
+		savedPosition.page = document.location.pathname;
+		savedPosition.position = position;
+		localStorage.setItem('saved_position', JSON.stringify(savedPosition));
+	}
+});
+
 function running() {
+	if (document.location.pathname == '/' && localStorage.getItem('saved_position') != null ) {
+		let savedPosition = JSON.parse( localStorage.getItem('saved_position') );
+		if (savedPosition.position > 50) {
+			goPage = document.location.origin + savedPosition.page + '?position='+savedPosition.position;
+			new Toast({
+				content: '<a href="'+goPage+'">Mutolaani avval to‘xtagan joydan davom ettirish</a>',
+				duration: 8000,
+				pointer:true
+			});
+		}
+	}
 	var Anchors = document.getElementsByTagName("a");
 	for (var i = 0; i < Anchors.length ; i++) {
 		let hostname = new URL(Anchors[i].href);
